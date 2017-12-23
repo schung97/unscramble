@@ -1,10 +1,10 @@
 class CreateAttempts < ActiveRecord::Migration[5.1]
   def change
     create_table :attempts do |t|
-      t.boolean :success, default: false
-      t.integer :try_count, default: 0
-      t.integer :user_id
-      t.integer :word_id
+      t.boolean :success
+      t.integer :tries
+      t.belongs_to :user, foreign_key: true
+      t.belongs_to :word, foreign_key: true
 
       t.timestamps
     end
