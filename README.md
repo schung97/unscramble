@@ -1,2 +1,3 @@
 # unscramble
-# it's a game
+
+It's a game.
