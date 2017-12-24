@@ -1,5 +1,5 @@
 class AttemptSerializer < ActiveModel::Serializer
-  attributes :success, :tries
+  attributes :id, :success, :tries
   belongs_to :user
-  belongs_to :word 
+  belongs_to :word
 end
