@@ -4,10 +4,49 @@
     <meta charset="utf-8">
     <title>Unscramble</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="src/timer.js" charset="utf-8"></script>
+    <script src="src/word.js" charset="utf-8"></script>
+    <script src="src/user.js" charset="utf-8"></script>
+    <script src="src/attempt.js" charset="utf-8"></script>
     <script src="src/adapter.js" charset="utf-8"></script>
     <script src="src/index.js" charset="utf-8"></script>
   </head>
-  <body>
-    <h1>Unscrambler</h1>
+  <body class="center">
+    <h2>Silvia's Game</h2>
+
+
+    <div id="login">
+      <form action="index.html" method="post">
+        <input id="firstname" type="text" name="firstname" placeholder="First Name">
+        <input id="lastname" type="text" name="lastname" placeholder="Last Name">
+        <input type="submit" name="submit" value="Submit">
+      </form>
+    </div>
+
+    <div class="timer">
+      <button id="10s" type="button" name="button">10 seconds</button>
+      <button id="30s" type="button" name="button">30 seconds</button>
+      <button id="1m" type="button" name="button">1 minute</button>
+    </div>
+
+    <div id="container">
+
+      <div id="submission">
+        <h2 id="time"></h2>
+        <p id="question">Word to be here</p>
+        <form action="index.html" method="post">
+          <input id="guess" type="text" name="guess" placeholder="And Your Guess is?">
+          <input type="submit" name="submit" value="Submit">
+        </form>
+
+      </div>
+
+      <div class="attempts">
+
+      </div>
+
+    </div>
+
   </body>
+
 </html>
