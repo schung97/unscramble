@@ -17,5 +17,50 @@ const Attempt = (function createAttemptClass() {
       return [...all];
     }
 
+    static cardMaker(guess, id, boolean) {
+      const attempts = document.getElementsByClassName('attempts')[0];
+      const card = document.createElement('div');
+      const button = document.createElement('button');
+      button.setAttribute('name', 'delete');
+      button.innerText = 'x';
+      card.insertBefore(button, card.firstChild);
+      card.setAttribute('id', `${id}`);
+
+      if (boolean === true) {
+        card.innerHTML += `<dl>YOU'RE RIGHT!</dl>
+                          <dl>${guess}</dl>`;
+        attempts.appendChild(card);
+
+      } else {
+        card.innerHTML += `<dl>YOU'RE WRONG!</dl>
+                          <dl>${guess}</dl>
+                          <button name="again">Try Again?</button>
+                          `;
+        attempts.appendChild(card);
+      }
+    }
+
+    static getSubmitValue(response) {
+        let count = 0;
+
+        document.getElementById('submission').addEventListener('submit', function(event) {
+        count +=1
+        console.log(count)
+        event.preventDefault();
+        const guess = event.target.guess.value;
+        event.target.guess.value = "";
+
+        if (Word.isItCorrect(guess, response)) {
+          Attempt.cardMaker(guess, response[2], true);
+          return guess;
+        } else {
+          //  cardMaker(guess, randomWord[2], false);
+          return guess;
+        }
+      });
+    }
+
+
+
   }
 })();
