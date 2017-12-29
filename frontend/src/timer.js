@@ -1,24 +1,40 @@
-
+let t;
 class Timer {
 
-  static countdown(secs) {
-    const time = document.getElementById('time')
+  // static countdown(secs) {
+  //   const time = document.getElementById('time');
+  //
+  //   window.setTimeout(function() {
+  //     if (secs === 60) {
+  //       time.innerText = `1:00`;
+  //       Timer.countdown(secs - 1);
+  //     } else if (secs >= 10) {
+  //       time.innerText = `0:${secs}`;
+  //       Timer.countdown(secs - 1);
+  //     } else if (secs < 10 && secs > 0) {
+  //       time.innerText = `0:0${secs}`;
+  //       Timer.countdown(secs - 1);
+  //     } else if (secs === 0) {
+  //       time.innerText = `0:0${secs}`;
+  //       return 0;
+  //     }
+  //   }, 1000);
+  // }
 
-    window.setTimeout(function() {
-      if (secs === 60) {
+
+  static countdown(secs) {
+    const time = document.getElementById('time');
+      if (secs === 60 ) {
         time.innerText = `1:00`;
-        Timer.countdown(secs - 1);
       } else if (secs >= 10) {
         time.innerText = `0:${secs}`;
-        Timer.countdown(secs - 1);
       } else if (secs < 10 && secs > 0) {
         time.innerText = `0:0${secs}`;
-        Timer.countdown(secs - 1);
       } else if (secs === 0) {
-        time.innerText = `0:0${secs}\n GOODLUCK TRYING!`;
-        return 0;
+        time.innerText = `0:0${secs}`;
       }
-    }, 1000);
+
+    t = setTimeout(function() { Timer.countdown(secs - 1) }, 1000);
   }
 
   static showTimer() {

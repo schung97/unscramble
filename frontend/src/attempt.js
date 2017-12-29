@@ -44,21 +44,24 @@ const Attempt = (function createAttemptClass() {
         let count = 0;
 
         document.getElementById('submission').addEventListener('submit', function(event) {
-        count +=1
-        console.log(count)
-        event.preventDefault();
-        const guess = event.target.guess.value;
-        event.target.guess.value = "";
+          event.preventDefault();
+          count +=1
+          console.log(count)
+          const guess = event.target.guess.value;
+          event.target.guess.value = "";
 
-        if (Word.isItCorrect(guess, response)) {
-          Attempt.cardMaker(guess, response[2], true);
-          return guess;
-        } else {
-          //  cardMaker(guess, randomWord[2], false);
-          return guess;
-        }
-      });
-    }
+          if (Word.isItCorrect(guess, response)) {
+            Attempt.cardMaker(guess, response[2], true);
+            clearTimeout(t);
+            console.log(`correct: ${guess}`)
+            return guess;
+          } else {
+            Attempt.cardMaker(guess, response[2], false);
+            console.log(`wrong: ${response}`)
+            return guess;
+          }
+        });
+      }
 
 
 
