@@ -4,30 +4,45 @@ const User = (function createUserClass() {
 
   return class User {
 
-    constructor(firstname, lastname) {
-      this.firstname = firstname;
-      this.lastname = lastname;
-      all.push(this)
+    constructor(user) {
+      this.user = user;
+      all.push(this);
     }
 
     static all() {
       return [...all];
     }
+    static getAllUsers() {
+      return Adapter.getUsers()
+        .then(response => response.forEach(function(user) {
+          new User(user);
+        }));
+    }
+
+
+    // static findUser(element) {
+    //   Adapter.getUsers().then(arr => arr.find(function(user) {
+    //     return user.firstname === first && user.lastname === last;
+    //   }));
+
 
     static findOrCreateUser(event) { //the finding part not implemented
       const username = document.createElement('div');
       const body = event.target.parentElement.parentElement;
-      const firstname = event.target.firstname.value;
-      const lastname = event.target.lastname.value;
-      // if (response.ok) {
-      //
-      // } else {
-      //   // Adapter.createUser(firstname, lastname);
-      // }
+      let first = event.target.firstname.value;
+      let last = event.target.lastname.value;
 
+      Adapter.getUsers()
+        .then(arr => arr.find(user => user.firstname === first && user.lastname === last ))
+        .then(function(user) {
+          if ( user === undefined ) {
+            Adapter.createUser(firstname, lastname);
+          }
+        });
+      
       login.style.display = 'none';
       username.setAttribute('id', 'username');
-      username.innerHTML = `Hey ${firstname} ${lastname}, Wanna Play?`;
+      username.innerHTML = `Hey ${first} ${last}, Wanna Play?`;
       body.insertBefore(username, document.getElementsByClassName('timer')[0]);
     }
 

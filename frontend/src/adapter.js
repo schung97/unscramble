@@ -12,14 +12,6 @@ class Adapter {
     })
   }
 
-  static getUser(first, last) {
-    // var url = new URL("http://localhost:3000/api/v1/users"),
-    //     params = {firstname:"Jenna", lastname:"Kim"}
-    // Object.keys(params).forEach(key => url.searchParams.append(key, params[key]))
-    // fetch(url).then(response => response.json()).then(arr => arr[0])
-
-  }
-
   static getUsers() {
     return fetch('http://localhost:3000/api/v1/users')
       .then(response => response.json());

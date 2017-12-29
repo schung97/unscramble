@@ -15,7 +15,6 @@ const Word = (function createWordClass() {
     static all() {
       return [...all];
     }
-
     static randomWordSelector() {
       const words = Word.all();
       const i = Math.floor(Math.random() * (words.length - 1));

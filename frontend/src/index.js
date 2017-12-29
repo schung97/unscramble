@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function(event) {
   User.login();
   Timer.showTimer();
   Word.allWords().then(Word.displayQuestion).then(response => Attempt.getSubmitValue(response));
-
   //
   // attempts.addEventListener('click', function(event) {
   //   handleEvent(event);
