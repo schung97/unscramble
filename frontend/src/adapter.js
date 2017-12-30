@@ -17,6 +17,11 @@ class Adapter {
       .then(response => response.json());
   }
 
+  static getUser(id) {
+    return fetch(`http://localhost:3000/api/v1/users/${id}`)
+      .then(response => response.json());
+  }
+
   static getAllWords() {
     return fetch('http://localhost:3000/api/v1/words')
       .then(response => response.json());
@@ -32,10 +37,10 @@ class Adapter {
       .then(response => response.json());
   }
 
-  static getAttempt(id) {
-    return fetch(`http://localhost:3000/api/v1/attempts/${id}`)
-      .then(response => response.json());
-  }
+  // static getAttempt(id) {
+  //   return fetch(`http://localhost:3000/api/v1/attempts/${id}`)
+  //     .then(response => response.json());
+  // }
 
   static deleteAttempt(id) {
     return fetch(`http://localhost:3000/api/v1/attempts/${id}`, {method: 'DELETE'})

@@ -20,30 +20,29 @@ const User = (function createUserClass() {
     }
 
 
-    // static findUser(element) {
-    //   Adapter.getUsers().then(arr => arr.find(function(user) {
-    //     return user.firstname === first && user.lastname === last;
-    //   }));
+    static findOrCreateUser(event) {
+      const username = document.getElementById('username');
+      const name = document.createElement('p');
 
 
-    static findOrCreateUser(event) { //the finding part not implemented
-      const username = document.createElement('div');
-      const body = event.target.parentElement.parentElement;
       let first = event.target.firstname.value;
       let last = event.target.lastname.value;
 
       Adapter.getUsers()
         .then(arr => arr.find(user => user.firstname === first && user.lastname === last ))
         .then(function(user) {
-          if ( user === undefined ) {
-            Adapter.createUser(firstname, lastname);
+          if (user !== undefined) {
+            name.setAttribute('id', `${user.id}`);
+          } else {
+            Adapter.createUser(first, last);
+            let id = Adapter.getUsers().then(obj => obj[obj.length - 1].id);
+            name.setAttribute('id', `${id}`);
           }
-        });
-      
+        })
+
       login.style.display = 'none';
-      username.setAttribute('id', 'username');
-      username.innerHTML = `Hey ${first} ${last}, Wanna Play?`;
-      body.insertBefore(username, document.getElementsByClassName('timer')[0]);
+      name.innerText = `Hey ${first} ${last}, Wanna Play?`;
+      username.insertBefore(name, username.firstChild);
     }
 
     static login() {

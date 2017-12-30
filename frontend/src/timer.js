@@ -1,4 +1,4 @@
-
+let off = false;
 let t;
 class Timer {
 
@@ -8,12 +8,15 @@ class Timer {
         time.innerText = `1:00`;
       } else if (secs >= 10) {
         time.innerText = `0:${secs}`;
-      } else if (secs < 10 && secs > 0) {
+      } else if (secs < 10 && secs > 1) {
         time.innerText = `0:0${secs}`;
+      } else if (secs === 1) {
+        off = true;
       } else if (secs === 0) {
         time.innerText = `0:0${secs}`;
+        document.getElementsByName('submit')[1].disabled = true;
       }
-      
+
     t = setTimeout(function() { Timer.countdown(secs - 1) }, 1000);
   }
 

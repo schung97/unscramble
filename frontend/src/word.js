@@ -34,11 +34,9 @@ const Word = (function createWordClass() {
       const answer = obj[1];
 
       if (guess === answer) {
-        return true
-        console.log("yes you smarty")
+        return true;
       } else {
         return false;
-        console.log("try again")
       }
     }
 
