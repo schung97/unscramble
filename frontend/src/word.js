@@ -15,30 +15,6 @@ const Word = (function createWordClass() {
     static all() {
       return [...all];
     }
-    static randomWordSelector() {
-      const words = Word.all();
-      const i = Math.floor(Math.random() * (words.length - 1));
-      const random = words[i];
-      const word = random['word'];
-      const word_id = random['id'];
-      const jumbled = word.split('').sort(function(){return .5 - Math.random()}).join('');
-      return [jumbled, word, word_id];
-    }
-
-    static wordToDisplay(obj) {
-      const question = obj[0];
-      return question;
-    }
-
-    static isItCorrect(guess, obj) {
-      const answer = obj[1];
-
-      if (guess === answer) {
-        return true;
-      } else {
-        return false;
-      }
-    }
 
     static allWords() {
       return Adapter.getAllWords().then(objects => {
@@ -48,12 +24,49 @@ const Word = (function createWordClass() {
       });
     }
 
-    static displayQuestion() {
-      const question = document.getElementById('question');
-      const randomWord = Word.randomWordSelector();
-      question.innerText = Word.wordToDisplay(randomWord);
-      return randomWord
+    static shuffle(word) {
+      return word.split('').sort(function(){return .5 - Math.random()}).join('');
     }
+
+    static randomWordSelector(event) {
+      const n = event.target.id;
+      const words = Word.all();
+      const i = Math.floor(Math.random() * (words.length - 1));
+      const w = words[i];
+      const word = w.word
+      const wordID = w.id;
+      const jumbled = Word.shuffle(word);
+
+      if ((n === '10s') && (jumbled.length <= 4)) {
+          Word.displayQuestion(jumbled, wordID)
+      } else if ((n === '30s') && (jumbled.length > 4 && jumbled.length <= 10)) {
+          Word.displayQuestion(jumbled, wordID)
+      } else if (n === '1m' && (jumbled.length > 10)) {
+          Word.displayQuestion(jumbled, wordID)
+      } else {
+        Word.randomWordSelector(event)
+      }
+    }
+
+    static displayQuestion(word, wordID) {
+      const question = document.getElementsByName('question')[0];
+      question.setAttribute('id', `${wordID}`);
+      question.innerText = word;
+    }
+
+    //
+    // static isItCorrect(guess, wordID) {
+    //
+    //   const found = Word.all().find(word => word.id === wordID);
+    //
+    //   if (found !== undefined) {
+    //     return true
+    //   }
+    //
+    //
+    // }
+
+
 
   }
 

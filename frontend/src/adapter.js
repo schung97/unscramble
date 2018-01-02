@@ -9,7 +9,7 @@ class Adapter {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       }
-    })
+    }).then(response => response.json())
   }
 
   static getUsers() {
@@ -37,10 +37,10 @@ class Adapter {
       .then(response => response.json());
   }
 
-  // static getAttempt(id) {
-  //   return fetch(`http://localhost:3000/api/v1/attempts/${id}`)
-  //     .then(response => response.json());
-  // }
+  static getAttempt(id) {
+    return fetch(`http://localhost:3000/api/v1/attempts/${id}`)
+      .then(response => response.json());
+  }
 
   static deleteAttempt(id) {
     return fetch(`http://localhost:3000/api/v1/attempts/${id}`, {method: 'DELETE'})
@@ -55,7 +55,7 @@ class Adapter {
         'Content-Type': 'application/json',
         'Accept':'application/json'
       }
-    })
+    }).then(response => response.json());
   }
 
   static updateAttempt(id, success, tries) {

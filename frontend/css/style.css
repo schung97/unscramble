@@ -2,11 +2,12 @@
 h2 {
   margin: auto;
   text-align: center;
-  line-height: 200px;
+  line-height: 100px;
 }
 
 .center {
     margin: auto;
+    height: 95%;
     text-align: center;
     width: 80%;
     border: 2px solid #ccc;
@@ -21,26 +22,33 @@ h2 {
   padding: 10px;
 }
 
-.attempts {
+.new-attempts {
+  margin: auto;
+  overflow: auto;
+  border: 2px solid #ccc;
+  width: 90%;
+  height: 150px;
+}
+
+.old-attempts {
 
   margin: auto;
   overflow: auto;
   border: 2px solid #ccc;
-  width: 75%;
-  height: 510px;
+  width: 90%;
+  height: 200px;
 }
-.attempts div {
-    width: 30%;
-    height: 200px;
-    padding: 12px 20px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    background-color: #f8f8f8;
-    resize: none;
-    overflow: hidden;
+.old-attempts div {
+  width: 30%;
+  height: 40%%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+  overflow: hidden;
 }
-
 button {
   background: #f8f8f8;
 	padding:3px 7px;

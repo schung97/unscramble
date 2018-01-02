@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Unscramble</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="src/event.js" charset="utf-8"></script>
     <script src="src/timer.js" charset="utf-8"></script>
     <script src="src/word.js" charset="utf-8"></script>
     <script src="src/user.js" charset="utf-8"></script>
@@ -12,7 +13,7 @@
     <script src="src/index.js" charset="utf-8"></script>
   </head>
   <body class="center">
-    <h2>Silvia's Game</h2>
+    <h2>Game</h2>
 
 
     <div id="login">
@@ -26,25 +27,32 @@
     <div id="username">
     </div>
 
-    <div class="timer">
+    <div class="timer" style="display :none;">
       <button id="10s" type="button" name="button">10 seconds</button>
       <button id="30s" type="button" name="button">30 seconds</button>
       <button id="1m" type="button" name="button">1 minute</button>
     </div>
 
-    <div id="container">
+    <div id="container" style="display :none;">
 
       <div id="submission">
         <h2 id="time"></h2>
-        <p id="question">Word to be here</p>
-        <form action="index.html" method="post">
+        <p name="question">Word to be here</p>
+        <form action="index.html" method="post" >
           <input id="guess" type="text" name="guess" placeholder="And Your Guess is?">
           <input type="submit" name="submit" value="Submit">
         </form>
+          <button name="play-again">Play Again?</button>
+
+      </div>
+      <div class="wrapper">
+        <div class="new-attempts">
+
+        </div>
 
       </div>
 
-      <div class="attempts">
+      <div class="old-attempts">
 
       </div>
 
