@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <title>Unscramble</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="src/event.js" charset="utf-8"></script>
-    <script src="src/timer.js" charset="utf-8"></script>
+    <script src="src/adapter.js" charset="utf-8"></script>
     <script src="src/word.js" charset="utf-8"></script>
     <script src="src/user.js" charset="utf-8"></script>
     <script src="src/attempt.js" charset="utf-8"></script>
-    <script src="src/adapter.js" charset="utf-8"></script>
+    <script src="src/timer.js" charset="utf-8"></script>
+    <script src="src/event.js" charset="utf-8"></script>
     <script src="src/index.js" charset="utf-8"></script>
   </head>
   <body class="center">
@@ -28,9 +28,9 @@
     </div>
 
     <div class="timer" style="display :none;">
-      <button id="10s" type="button" name="button">10 seconds</button>
-      <button id="30s" type="button" name="button">30 seconds</button>
-      <button id="1m" type="button" name="button">1 minute</button>
+      <button data-time="10" type="button" name="button">10 seconds</button>
+      <button data-time="30" type="button" name="button">30 seconds</button>
+      <button data-time="60" type="button" name="button">1 minute</button>
     </div>
 
     <div id="container" style="display :none;">
@@ -42,7 +42,7 @@
           <input id="guess" type="text" name="guess" placeholder="And Your Guess is?">
           <input type="submit" name="submit" value="Submit">
         </form>
-          <button name="play-again">Play Again?</button>
+        <button name="play-again">Play Again?</button>
 
       </div>
       <div class="wrapper">

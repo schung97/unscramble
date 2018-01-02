@@ -28,7 +28,7 @@ class Api::V1::AttemptsController < ApplicationController
 
   private
   def attempt_params
-    params.permit(:success, :tries, :user_id, :word_id)
+    params.permit(:success, :tries, :question, :time, :user_id, :word_id)
   end
 
   def set_attempt

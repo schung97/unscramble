@@ -1,73 +1,47 @@
+const Word = (function createWordClass () {
 
-//store all the words to display,
-//note to self. pass the string text and word id
-const Word = (function createWordClass() {
   const all = [];
+  let currentWord = null;
 
-  return class Word {
+  return class Word extends Adapter {
 
-    constructor(word, id) {
-      this.word = word;
-      this.id = id;
-      all.push(this)
+    static url() {
+      return 'http://localhost:3000/api/v1/words';
     }
 
     static all() {
-      return [...all];
+      return all; // Dont copy the array because Adapter needs the ability to modify it
     }
 
-    static allWords() {
-      return Adapter.getAllWords().then(objects => {
-        objects.forEach(function(object) {
-          new Word(object.word, object.id);
-        });
-      });
+    static currentWord() {
+      return currentWord;
+    }
+
+    static selectRandomWord(time) {
+      const words = Word.all();
+      const i = Math.floor(Math.random() * words.length);
+      const w = words[i];
+      const word = w.word;
+      const jumbled = Word.shuffle(word);
+
+      const minimumLength = Math.max(2, Math.floor(time / 6));
+      const maximumLength = Math.max(4, Math.floor(time / 3));
+
+      if (jumbled.length < minimumLength || jumbled.length > maximumLength) {
+        return Word.selectRandomWord(time); // retry
+      }
+      currentWord = w;
+      return jumbled;
     }
 
     static shuffle(word) {
-      return word.split('').sort(function(){return .5 - Math.random()}).join('');
-    }
-
-    static randomWordSelector(event) {
-      const n = event.target.id;
-      const words = Word.all();
-      const i = Math.floor(Math.random() * (words.length - 1));
-      const w = words[i];
-      const word = w.word
-      const wordID = w.id;
-      const jumbled = Word.shuffle(word);
-
-      if ((n === '10s') && (jumbled.length <= 4)) {
-          Word.displayQuestion(jumbled, wordID)
-      } else if ((n === '30s') && (jumbled.length > 4 && jumbled.length <= 10)) {
-          Word.displayQuestion(jumbled, wordID)
-      } else if (n === '1m' && (jumbled.length > 10)) {
-          Word.displayQuestion(jumbled, wordID)
-      } else {
-        Word.randomWordSelector(event)
+      const jumbled = word.split('').sort(() => .5 - Math.random()).join('');
+      if (jumbled === word) {
+        return Word.shuffle(word); // retry
       }
+      return jumbled;
     }
 
-    static displayQuestion(word, wordID) {
-      const question = document.getElementsByName('question')[0];
-      question.setAttribute('id', `${wordID}`);
-      question.innerText = word;
-    }
-
-    //
-    // static isItCorrect(guess, wordID) {
-    //
-    //   const found = Word.all().find(word => word.id === wordID);
-    //
-    //   if (found !== undefined) {
-    //     return true
-    //   }
-    //
-    //
-    // }
-
-
-
-  }
+  };
 
 })();

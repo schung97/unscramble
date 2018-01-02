@@ -15,6 +15,8 @@ ActiveRecord::Schema.define(version: 20171223222217) do
   create_table "attempts", force: :cascade do |t|
     t.boolean "success"
     t.integer "tries"
+    t.string "question"
+    t.integer "time"
     t.integer "user_id"
     t.integer "word_id"
     t.datetime "created_at", null: false

@@ -1,73 +1,61 @@
 
 class Adapter {
 
-  static createUser(firstname, lastname) {
-    return fetch('http://localhost:3000/api/v1/users', {
+  static create(attributes) {
+    return fetch(this.url(), {
       method: 'POST',
-      body: JSON.stringify({firstname, lastname}),
+      body: JSON.stringify(attributes),
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       }
     }).then(response => response.json())
+      .then(json => new this(json));
   }
 
-  static getUsers() {
-    return fetch('http://localhost:3000/api/v1/users')
+  static getAll() {
+    return fetch(this.url())
+      .then(response => response.json())
+      .then(array => array.map(json => new this(json)));
+  }
+
+  static get(id) {
+    return fetch(`${this.url()}/${id}`)
+       .then(response => response.json())
+       .then(json => new this(json));
+  }
+
+  static delete(id) {
+    const all = this.all();
+    const index = all.findIndex(item => item.id === id);
+    if (index !== -1) all.splice(index, 1); // here, splice removes that item from the "all" array
+    return fetch(`${this.url()}/${id}`, { method: 'DELETE' })
       .then(response => response.json());
   }
 
-  static getUser(id) {
-    return fetch(`http://localhost:3000/api/v1/users/${id}`)
-      .then(response => response.json());
-  }
-
-  static getAllWords() {
-    return fetch('http://localhost:3000/api/v1/words')
-      .then(response => response.json());
-  }
-
-  static getWord(id) {
-    return fetch(`http://localhost:3000/api/v1/words/${id}`)
-      .then(response => response.json());
-  }
-
-  static getAllAttempts() {
-    return fetch('http://localhost:3000/api/v1/attempts')
-      .then(response => response.json());
-  }
-
-  static getAttempt(id) {
-    return fetch(`http://localhost:3000/api/v1/attempts/${id}`)
-      .then(response => response.json());
-  }
-
-  static deleteAttempt(id) {
-    return fetch(`http://localhost:3000/api/v1/attempts/${id}`, {method: 'DELETE'})
-      .then(response => response.json());
-  }
-
-  static createAttempt(success, tries, user_id, word_id) {
-    return fetch('http://localhost:3000/api/v1/attempts', {
-      method: 'POST',
-      body: JSON.stringify({success, tries, user_id, word_id}),
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept':'application/json'
-      }
-    }).then(response => response.json());
-  }
-
-  static updateAttempt(id, success, tries) {
-    return fetch(`http://localhost:3000/api/v1/attempts/${id}`, {
+  static update(id, attributes) {
+    return fetch(`${this.url()}/${id}`, {
       method: 'PATCH',
-      body: JSON.stringify({ success, tries}),
+      body: JSON.stringify(attributes),
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       }
-    }).then(response => response.json());
+    }).then(response => response.json())
+      .then(json => new this(json));
   }
 
+  // Equivalent to findOrCreate
+  constructor(attributes) {
+    const id = attributes.id;
+    const all = this.constructor.all(); // this.constructor is the child class
+    let instance = all.find(item => item.id === id);
+    if (!instance) {
+      instance = this;
+      all.push(instance);
+    }
+    Object.assign(instance, attributes);
+    return instance;
+  }
 
 }
