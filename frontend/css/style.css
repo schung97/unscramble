@@ -1,54 +1,20 @@
+body {
+  margin: 0;
+}
+
 h2 {
-  margin: auto;
+  padding-top: 30px;
   text-align: center;
-  line-height: 200px;
-}
-
-.center {
-    margin: auto;
-    text-align: center;
-    width: 100%;
-    border: 2px solid #ccc;
-    /*padding: 10px;*/
-}
-
-.new-attempts {
   margin: auto;
-  overflow: auto;
-  /*border: 2px solid #ccc;*/
-  width: 100%;
-  height: 65px;
-  background-color: #f8f8f8;
 }
 
-.old-attempts {
-  padding-top: 1cm;
-  margin: auto;
-  overflow: auto;
-  border: 2px solid #ccc;
-  width: 90%;
-  height: 300px;
-}
-.old-attempts div {
-  width: 30%;
-  height: auto;
-  display:inline-block;
-  position:relative;
 
-  padding: 12px 20px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  background-color: #f8f8f8;
-  resize: none;
-  overflow: hidden;
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
-button {
-  background: #f8f8f8;
-	padding:3px 7px;
-	border:1px solid #ccc;
-	color:#666;
-	border-radius:4px;
-	font-weight: normal;
-	font-size:10px;
+
+form input[type=text] {
+  align-items: center;
 }
