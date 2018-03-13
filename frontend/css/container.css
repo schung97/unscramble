@@ -1,0 +1,80 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+#container {
+}
+#submission {
+  width: 1200px;
+}
+#submission h2 {
+  padding-top: 7vh;
+}
+#submission p {
+  text-align: center;
+}
+.wrapper {
+  width: 588px;
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: scroll;
+  background-color: white;
+}
+button[name=play-again], button[name=delete], button[name=try-again] {
+  display: block;
+  margin: auto;
+  width: 150px;
+  padding: 20px 20px;
+  background-color: rgb(151, 35, 31);
+  border: none;
+  border-radius: 3px;
+  font-size: 17px;
+  color: rgb(255, 255, 255);
+}
+.old-attempts {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.old-attempts div {
+  border: 2px solid;
+  border-color: rgb(151, 35, 31);
+  margin-bottom: 10px;
+  padding: 90px 50px;
+}
+.old-attempts div dl {
+  text-align: center;
+}
+.old-attempts div dl:first-child {
+  font-weight: bold;
+}
+.new-attempts dl {
+  text-align: center;
+} */

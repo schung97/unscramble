@@ -13,7 +13,8 @@ class Event {
   static login(event) {
     event.preventDefault();
     document.getElementsByClassName('timer')[0].style.display = 'block';
-    document.getElementById('username').style.display = 'initial';
+    document.getElementById('username').style.display = 'block';
+    document.getElementById('title').style.paddingTop = 65;
     event.target.parentElement.style.display = 'none';
     const firstname = event.target.firstname.value;
     const lastname = event.target.lastname.value;
@@ -35,9 +36,10 @@ class Event {
     Timer.countdown(currentTime, Event.whenZero);
     document.getElementsByName('question')[0].innerText = jumbled;
     document.getElementsByClassName('timer')[0].style.display = 'none';
-    document.getElementById('container').style.display = 'initial';
-    document.getElementById('submission').style.display = 'initial';
-    document.getElementsByClassName('wrapper')[0].style.display = 'initial';
+    document.getElementById('container').style.display = 'flex';
+    document.getElementById('submission').style.display = 'block';
+    document.getElementsByClassName('wrapper')[0].style.display = 'block';
+    document.getElementById('username').style.marginTop = 0;
     document.getElementsByName('play-again')[0].style.display = 'none';
   }
 
@@ -75,7 +77,7 @@ class Event {
       Timer.stop();
       Attempt.displayResult(guess.value, word.id, true, currentTime, count);
       count = 0;
-      document.getElementsByName('play-again')[0].style.display = 'initial';
+      document.getElementsByName('play-again')[0].style.display = 'block';
       document.getElementsByName('submit')[1].disabled = true;
     }
     guess.value = "";
@@ -87,7 +89,7 @@ class Event {
     Attempt.displayResult(guess.value, word.id, false, currentTime, count);
     count = 0;
     guess.value = "";
-    document.getElementsByName('play-again')[0].style.display = 'initial';
+    document.getElementsByName('play-again')[0].style.display = 'block';
     document.getElementsByName('submit')[1].disabled = true;
   }
 
