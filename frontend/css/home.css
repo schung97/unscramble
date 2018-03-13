@@ -1,18 +1,17 @@
 
 #username {
-  margin-top: 27vh;
+  margin-top: 21vh;
   display: block;
   text-align: center
 }
 
 #username p {
-  margin-top: 50px;
+  margin-top: 0;
   font-size: 37px;
   color: rgb(255, 255, 255);
 }
 
 .timer {
-  margin-top: 50px;
   text-align: center;
 }
 .timer button {
