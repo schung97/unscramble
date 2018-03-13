@@ -1,4 +1,56 @@
 
 #container {
   justify-content: space-around;
+  overflow: hidden;
+}
+
+
+#submission {
+  text-align: center;
+  padding-top: 50px;
+  padding-left: 300px;
+  padding-right: 300px;
+}
+
+#submission button {
+  margin: auto;
+  font-size: 25px;
+  line-height: 2;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 4px;
+  margin-top: 66px;
+}
+
+
+.wrapper {
+  overflow-y: scroll;
+}
+
+.new-attempts {
+  text-align: center;
+}
+.new-attempts dl {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.old-attempts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.old-attempts div {
+  background: white;
+  border: 3px solid;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  text-align: center;
+  width: 200px;
+  padding: 15px 30px;
+}
+
+.old-attempts div dl:first-child {
+  font-size: 24px;
+  font-weight: 700;
 }
