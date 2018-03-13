@@ -12,7 +12,7 @@ class Event {
 
   static login(event) {
     event.preventDefault();
-    document.getElementsByClassName('timer')[0].style.display = 'initial';
+    document.getElementsByClassName('timer')[0].style.display = 'block';
     document.getElementById('username').style.display = 'initial';
     event.target.parentElement.style.display = 'none';
     const firstname = event.target.firstname.value;
@@ -47,7 +47,7 @@ class Event {
         Attempt.delete(parent_id);
         event.target.parentElement.remove();
     } else if (event.target.name === 'play-again') {
-        document.getElementsByClassName('timer')[0].style.display = 'initial';
+        document.getElementsByClassName('timer')[0].style.display = 'block';
         document.getElementById('container').style.display = 'none';
         document.getElementById('submission').style.display = 'none';
         document.getElementsByClassName('wrapper')[0].style.display = 'none';
