@@ -10,8 +10,9 @@
 
 #submission {
   text-align: center;
-  padding-left: 300px;
-  padding-right: 300px;
+  padding-left: 320px;
+  padding-right: 320px;
+  z-index: 1; 
 }
 
 #submission button {
@@ -24,14 +25,30 @@
   margin-top: 66px;
 }
 #time {
-  font-size: 65px;
+  margin: 0;
+  font-size: 76px;
+  color: rgb(255, 255,255);
+  letter-spacing: 9px;
+  background-color: rgb(151, 35, 31);
+  -webkit-text-stroke: 3px black;
 }
+
 p[name=question] {
   font-size: 38px;
+  color: rgb(241, 63,72);
+  font-weight: 700;
+  line-height: 2;
+  letter-spacing: 12px;
+  border-top: 5px solid rgb(0, 0, 0);
+  border-bottom: 5px solid rgb(0, 0, 0);
+  background-color: rgb(255, 235, 59);
 }
+
 
 .wrapper {
   overflow-y: scroll;
+  padding: 15px;
+  box-shadow: inset 5px 5px 7px rgba(0, 0, 0, 0.3), inset -5px -5px 7px rgba(0, 0, 0, 0.3);
 }
 
 .new-attempts {
@@ -48,15 +65,17 @@ p[name=question] {
   justify-content: space-between;
 }
 .old-attempts div {
-  background: white;
-  border: 3px solid;
+  background: rgb(255, 255, 255);
+  border: 2.5px solid;
   border-radius: 4px;
   margin-bottom: 16px;
   text-align: center;
-  width: 200px;
+  width: 250px;
   padding: 15px 30px;
-
   position: relative;
+  border-top-left-radius: 52px 3px;
+  border-bottom-right-radius: 60px 9px;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.40);
 }
 .old-attempts div dl:first-child {
   font-size: 24px;
@@ -65,6 +84,7 @@ p[name=question] {
 
 .old-attempts div button[name=delete] {
   top: 0px;
+  background-color: transparent;
   color: rgb(151, 35, 31);
   position: absolute;
   left: 6px;

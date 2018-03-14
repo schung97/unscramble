@@ -21,14 +21,11 @@
     <div id="login">
       <form id= action="index.html" method="post">
         <input id="firstname" type="text" name="firstname" placeholder="Firstname" autocomplete="off">
-        <input id="lastname" type="text" name="lastname" placeholder="Lastname" autocomplete="off">
+        <input id="lastname" type="text" name="lastname" placeholder="Lastname">
         <input type="submit" name="submit" value="SUBMIT">
       </form>
     </div>
-
-    <div id="username">
-    </div>
-
+    <div id="username"></div>
     <div class="timer" style="display :none;">
       <button data-time="10" type="button" name="button">10 seconds</button>
       <button data-time="30" type="button" name="button">30 seconds</button>
@@ -41,7 +38,7 @@
         <h2 id="time"></h2>
         <p name="question">Word to be here</p>
         <form action="index.html" method="post" >
-          <input id="guess" type="text" name="guess" placeholder="And Your Guess is?">
+          <input id="guess" type="text" name="guess" placeholder="And Your Guess is?" autocomplete="off">
           <input type="submit" name="submit" value="Submit">
         </form>
         <button name="play-again">Play Again?</button>

@@ -70,13 +70,9 @@ button:focus {
 }
 
 #title {
-  /* font-size: 35px; */
-  /* color: rgb(151, 35, 31); */
   margin: 0;
   text-align: center;
   padding-top: 20vh;
-  /* margin-bottom: 20px; */
-
   font-size: 90px;
   font-weight: 700;
   color: rgb(255, 255, 255);
@@ -90,13 +86,13 @@ button:focus {
 }
 form {
   width: 400px;
+  height: 416px;
   padding: 70px 20px;
   margin: auto;
   display: flex;
   flex-direction: column;
   border: 9px solid;
   border-color: rgb(151, 35, 31);
-  /* border-radius: 4px; */
   box-shadow: 9px 12px black, -9px -12px black;
 }
 form input[type=text] {
@@ -108,21 +104,23 @@ form input[type=text] {
   letter-spacing: 2px;
   color: red;
   border: 5px solid black;
-  /* border-color: rgb(151, 35, 31); */
   border-radius: 1px;
 }
 form input:focus {
   outline: none;
-
   border: 5px solid rgb(255, 235, 59);
-  box-shadow: inset 1px 1px rgba(0, 0, 0, .2), inset -1px -1px rgba(0, 0, 0, .2);
+  border-radius: 1px;
+  box-shadow: inset 5px 5px rgb(0, 0, 0), inset -5px -5px rgb(0, 0, 0);
 }
 form input[type=submit] {
   font-size: 17px;
-  padding: 14px;
+  width: 46%;
+  margin: auto;
+  margin-top: 41px;
+  padding: 18px 0px;
   background-color: rgb(151, 35, 31);
   border: none;
-  border-radius: 3px;
+  border-radius: 2px;
   color: white;
   cursor: pointer;
   letter-spacing: inherit;
@@ -130,4 +128,6 @@ form input[type=submit] {
 }
 form input[type=submit]:hover {
   opacity: 1;
+  /* border: 3px solid rgb(255, 235, 59); */
+  transform: scale(1.3);
 }

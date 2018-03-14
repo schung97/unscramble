@@ -6,17 +6,32 @@
 }
 
 #username p {
-  margin-top: 0;
+  margin: auto;
   font-size: 37px;
+  color: rgb(255, 255, 255);
+  line-height: 2.6px;
+  display: inline-block;
+  padding-left: 30px;
+  padding-right: 30px;
 }
-
+#username p:after {
+  content: '';
+  display: block;
+  margin: auto;
+  padding-bottom: 38px;
+  border-bottom: 7px solid black;
+  width: 86%;
+}
 .timer {
   text-align: center;
 }
 .timer button {
   width: 187px;
   padding: 19px 10px;
-  margin-top: 20px;
-  margin-left: 37px;
-  border-radius: 5px;
+  margin-top: 75px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border: 2.2px solid black;
+  border-radius: 2px;
+  box-shadow: 2px 10px rgb(0, 0, 0);
 }
