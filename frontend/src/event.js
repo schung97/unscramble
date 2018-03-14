@@ -42,6 +42,7 @@ class Event {
     document.getElementById('submission').style.display = 'block';
     document.getElementsByClassName('wrapper')[0].style.display = 'block';
     document.getElementById('username').style.marginTop = 0;
+    document.getElementById('username').style.display = 'none';
     document.getElementsByName('play-again')[0].style.display = 'none';
   }
 

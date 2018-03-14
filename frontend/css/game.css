@@ -5,6 +5,7 @@
   margin-bottom: 23px;
   margin-left: 25px;
   margin-right: 25px;
+  margin-top: 52px;
 }
 
 
@@ -12,9 +13,13 @@
   text-align: center;
   padding-left: 320px;
   padding-right: 320px;
-  z-index: 1; 
+  z-index: 1;
+  background-color: beige;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.40);
 }
-
+#submission form {
+  height: 330px;
+}
 #submission button {
   margin: auto;
   font-size: 25px;
@@ -26,6 +31,7 @@
 }
 #time {
   margin: 0;
+  margin-top: 15px;
   font-size: 76px;
   color: rgb(255, 255,255);
   letter-spacing: 9px;
@@ -37,18 +43,21 @@ p[name=question] {
   font-size: 38px;
   color: rgb(241, 63,72);
   font-weight: 700;
-  line-height: 2;
+  line-height: 1.4;
   letter-spacing: 12px;
   border-top: 5px solid rgb(0, 0, 0);
   border-bottom: 5px solid rgb(0, 0, 0);
   background-color: rgb(255, 235, 59);
+  margin-top: 15px;
 }
 
 
 .wrapper {
   overflow-y: scroll;
   padding: 15px;
-  box-shadow: inset 5px 5px 7px rgba(0, 0, 0, 0.3), inset -5px -5px 7px rgba(0, 0, 0, 0.3);
+  border: 3px solid;
+  background-color: rgb(151, 35, 31);
+  box-shadow: inset 5px 5px 38px rgba(0, 0, 0, 0.1), inset -5px -5px 38px rgba(0, 0, 0, 0.1);
 }
 
 .new-attempts {
@@ -62,13 +71,13 @@ p[name=question] {
 .old-attempts {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 .old-attempts div {
   background: rgb(255, 255, 255);
   border: 2.5px solid;
   border-radius: 4px;
-  margin-bottom: 16px;
+  margin: 22px;
   text-align: center;
   width: 250px;
   padding: 15px 30px;
@@ -83,11 +92,12 @@ p[name=question] {
 }
 
 .old-attempts div button[name=delete] {
-  top: 0px;
+  top: 19px;
   background-color: transparent;
   color: rgb(151, 35, 31);
   position: absolute;
   left: 6px;
+  line-height: 0;
   font-size: 30px;
   background-color: inherit;
 }

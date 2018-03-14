@@ -37,13 +37,14 @@ const Attempt = (function createAttemptClass () {
     }
 
     static displayResult(guess, word_id, success, time, tries) {
-      const newAttempt = document.getElementsByClassName('new-attempts')[0];
+      // const newAttempt = document.getElementsByClassName('new-attempts')[0];
       const user_id = Number(document.getElementById('username').childNodes[0].getAttribute('data-user-id'));
-      const question = document.getElementsByName('question')[0].innerText;
+      const questionHTML = document.getElementsByName('question')[0];
+      const question = questionHTML.innerText;
       if (success) {
-        newAttempt.innerHTML = `<dl>GOOD JOB!</dl>`;
+        questionHTML.innerHTML = `GOOD JOB!`;
       } else {
-        newAttempt.innerHTML = `<dl>NOPE!</dl>`;
+        questionHTML.innerHTML = `INCORRECT!`;
       }
       Attempt.create({ success, tries, question, time, user_id, word_id }).then(Attempt.cardMaker);
     }
