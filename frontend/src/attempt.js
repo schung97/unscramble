@@ -20,14 +20,14 @@ const Attempt = (function createAttemptClass () {
       if (attempt.success) {
         card.innerHTML = `
           <dl>GOOD JOB!</dl>
-          <dl>You figured out ${attempt.word.word}.</dl>
-          <dl>You got it with ${attempt.tries} ${tryOrTries}!</dl>
+          <dl>You figured out <strong>${attempt.word.word}</strong>.</dl>
+          <dl>You got it with <strong>${attempt.tries}</strong> ${tryOrTries}!</dl>
           <button name='delete'>x</button>`;
       } else {
         card.innerHTML = `
           <dl>NOPE!</dl>
-          <dl>You couldn't figure out ${attempt.question}.</dl>
-          <dl>You failed even after ${attempt.tries} ${tryOrTries}.</dl>
+          <dl>You couldn't figure out <strong>${attempt.question}</strong>.</dl>
+          <dl>You failed even after <strong>${attempt.tries}</strong> ${tryOrTries}.</dl>
           <button name='delete'>x</button>
           <button name='try-again'>Try Again?</button>`;
       }

@@ -2,7 +2,12 @@
 #username {
   margin-top: 21vh;
   display: block;
-  text-align: center
+  text-align: center;
+  line-height: 8;
+  font-size: 18px;
+  bottom: -65px;
+  right: 35px;
+  letter-spacing: 4px;
 }
 
 #username p {
@@ -10,7 +15,7 @@
   font-size: 37px;
   color: rgb(255, 255, 255);
   line-height: 2.6px;
-  display: inline-block;
+  /* display: inline-block; */
   padding-left: 30px;
   padding-right: 30px;
 }
@@ -18,9 +23,9 @@
   content: '';
   display: block;
   margin: auto;
-  padding-bottom: 38px;
-  border-bottom: 7px solid black;
-  width: 86%;
+  padding-bottom: 52px;
+  border-bottom: 5px solid rgb(129, 4, 4);
+  width: 34%;
 }
 .timer {
   text-align: center;

@@ -1,4 +1,8 @@
 
+strong {
+  font-size: 23px;
+  color: rgb(144, 35, 0);
+}
 #container {
   justify-content: space-around;
   overflow: hidden;
@@ -7,27 +11,35 @@
   margin-right: 25px;
   margin-top: 52px;
 }
-
-
 #submission {
   text-align: center;
   padding-left: 320px;
   padding-right: 320px;
   z-index: 1;
-  background-color: beige;
-  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.40);
 }
 #submission form {
   height: 330px;
+  border: 12px solid;
+  box-shadow: none;
+  padding-bottom: 0;
+  border-radius: 2px;
 }
 #submission button {
   margin: auto;
   font-size: 25px;
-  line-height: 2;
+  line-height: 3;
   padding-left: 30px;
   padding-right: 30px;
   border-radius: 4px;
   margin-top: 66px;
+}
+#submission button:hover {
+  opacity: 1;
+  transform: scale(1.3);
+}
+#submission button:focus {
+  opacity: 1;
+  outline: none;
 }
 #time {
   margin: 0;
@@ -37,6 +49,7 @@
   letter-spacing: 9px;
   background-color: rgb(151, 35, 31);
   -webkit-text-stroke: 3px black;
+  border-radius: 2px;
 }
 
 p[name=question] {
@@ -45,17 +58,15 @@ p[name=question] {
   font-weight: 700;
   line-height: 1.4;
   letter-spacing: 12px;
-  border-top: 5px solid rgb(0, 0, 0);
-  border-bottom: 5px solid rgb(0, 0, 0);
   background-color: rgb(255, 235, 59);
   margin-top: 15px;
+  border-radius: 2px;
 }
 
 
 .wrapper {
   overflow-y: scroll;
   padding: 15px;
-  border: 3px solid;
   background-color: rgb(151, 35, 31);
   box-shadow: inset 5px 5px 38px rgba(0, 0, 0, 0.1), inset -5px -5px 38px rgba(0, 0, 0, 0.1);
 }
@@ -84,7 +95,7 @@ p[name=question] {
   position: relative;
   border-top-left-radius: 52px 3px;
   border-bottom-right-radius: 60px 9px;
-  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.40);
+  box-shadow: 4px 4px 14px 0px rgba(0, 0, 0, 0.40);
 }
 .old-attempts div dl:first-child {
   font-size: 24px;
