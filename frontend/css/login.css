@@ -65,6 +65,7 @@ button {
   cursor: pointer;
   letter-spacing: inherit;
   opacity: 0.8;
+  transition: all 0.3s;
 }
 button:hover {
   opacity: 1;
@@ -111,6 +112,7 @@ form input[type=text] {
   letter-spacing: 2px;
   border: 5px solid black;
   border-radius: 1px;
+  transition: all 0.3s;
 }
 form input:focus {
   outline: none;
@@ -131,9 +133,11 @@ form input[type=submit] {
   cursor: pointer;
   letter-spacing: inherit;
   opacity: 0.8;
+  transition: all 0.24s;
 }
-form input[type=submit]:hover {
+form input[type=submit]:hover, form input[type=submit]:focus {
   opacity: 1;
+  box-shadow: none;
   /* border: 3px solid rgb(255, 235, 59); */
   transform: scale(1.3);
 }
