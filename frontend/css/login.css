@@ -40,7 +40,6 @@ body {
   -webkit-text-stroke: 1px white;
   letter-spacing: 7px;
   z-index: -2;
-  /* transform: rotate(-20deg); */
 }
 #login:after {
   white-space: pre;
