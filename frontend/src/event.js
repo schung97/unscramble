@@ -57,23 +57,25 @@ class Event {
         document.getElementById('submission').style.display = 'none';
         document.getElementsByClassName('wrapper')[0].style.display = 'none';
         document.getElementsByName('play-again')[0].style.display = 'none';
-        document.getElementsByClassName('new-attempts')[0].innerText = "";
         document.getElementsByName('submit')[1].disabled = false;
     } else if (event.target.name === 'try-again') {
         const parent_id = Number(event.target.parentElement.id);
-        const time = Attempt.all().find(attempt => attempt.id === parent_id).time;
+        const attempt = Attempt.all().find(attempt => attempt.id === parent_id); // coming from database
         Attempt.delete(parent_id);
         event.target.parentElement.remove();
-        document.getElementsByClassName('new-attempts')[0].innerText = "";
         document.getElementsByName('submit')[1].disabled = false;
         document.getElementsByName('play-again')[0].style.display = 'none';
-        Timer.countdown(time, Event.whenZero);
+        document.getElementsByName('question')[0].innerText = attempt.question;
+        Word.redo(attempt.word);
+        console.log('attempt word', attempt.word)
+        Timer.countdown(attempt.time, Event.whenZero);
     }
   }
 
   static submit() {
     event.preventDefault();
     const word = Word.currentWord();
+    console.log('currentword', word)
     const guess = document.getElementById('guess');
     count += 1;
     if (guess.value === word.word) {

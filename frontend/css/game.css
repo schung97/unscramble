@@ -72,15 +72,6 @@ p[name=question] {
   box-shadow: inset 5px 5px 38px rgba(0, 0, 0, 0.1), inset -5px -5px 38px rgba(0, 0, 0, 0.1);
   letter-spacing: 1px;
 }
-
-.new-attempts {
-  text-align: center;
-}
-.new-attempts dl {
-  font-size: 24px;
-  font-weight: 700;
-}
-
 .old-attempts {
   display: flex;
   flex-wrap: wrap;

@@ -37,7 +37,6 @@ const Attempt = (function createAttemptClass () {
     }
 
     static displayResult(guess, word_id, success, time, tries) {
-      // const newAttempt = document.getElementsByClassName('new-attempts')[0];
       const user_id = Number(document.getElementById('username').childNodes[0].getAttribute('data-user-id'));
       const questionHTML = document.getElementsByName('question')[0];
       const question = questionHTML.innerText;

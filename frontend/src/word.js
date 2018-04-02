@@ -34,10 +34,13 @@ const Word = (function createWordClass () {
       return jumbled;
     }
 
+    static redo(word) {
+      currentWord = word;
+    }
     static shuffle(word) {
       const jumbled = word.split('').sort(() => .5 - Math.random()).join('');
       if (jumbled === word) {
-        return Word.shuffle(word); // retry
+        return Word.shuffle(word); // retries if word doesn't jumble properly
       }
       return jumbled;
     }
