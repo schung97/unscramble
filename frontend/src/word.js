@@ -6,7 +6,7 @@ const Word = (function createWordClass () {
   return class Word extends Adapter {
 
     static url() {
-      return 'http://localhost:3000/api/v1/words';
+      return ' https://unscrambled-game.herokuapp.com/api/v1/words';
     }
 
     static all() {

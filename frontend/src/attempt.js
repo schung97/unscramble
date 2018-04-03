@@ -5,7 +5,7 @@ const Attempt = (function createAttemptClass () {
   return class Attempt extends Adapter {
 
     static url() {
-      return 'http://localhost:3000/api/v1/attempts';
+      return ' https://unscrambled-game.herokuapp.com/api/v1/attempts';
     }
 
     static all() {

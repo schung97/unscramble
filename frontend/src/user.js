@@ -5,7 +5,7 @@ const User = (function createUserClass () {
   return class User extends Adapter {
 
     static url() {
-      return 'http://localhost:3000/api/v1/users';
+      return ' https://unscrambled-game.herokuapp.com/api/v1/users';
     }
 
     static all() {
