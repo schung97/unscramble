@@ -1,0 +1,36 @@
+/* 
+@media screen and (min-width: 1200px) and (min-height: 1024px) {
+  #title {
+    margin-top: 20vh;
+  }
+  #container {
+    margin-top: 90px;
+        justify-content: space-between;
+  }
+  #submission {
+    width: 360px;
+  }
+  #submission form {
+    padding-top: 55px;
+  }
+  #submission input[type=submit] {
+    font-size: 20px;
+    width: auto;
+    padding: 15px 43px;
+    margin-top: 36px;
+  }
+  #submission button {
+    width: 255px;
+    font-size: 25px;
+  }
+  #time {
+    font-size: 72px;
+    margin-bottom: 35px;
+  }
+  .old-attempts {
+    width: 780px;
+  }
+  p[name=question] {
+    font-size: 35px;
+  }
+} */

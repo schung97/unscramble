@@ -4,29 +4,32 @@ strong {
   color: rgb(144, 35, 0);
 }
 #container {
-  justify-content: space-around;
-  margin-bottom: 23px;
-  margin-right: 25px;
-  margin-top: 52px;
+  height: 71vh;
+  margin-top: 40px;
 }
 #submission {
+  position: relative;
   text-align: center;
-  margin-left: 90px;
-  margin-right: 90px;
   z-index: 1;
+  width: 400px;
+  margin-left: 100px;
+  margin-right: 50px;
+  height: 100%;
 }
 #submission form {
-  border: 12px solid;
+  border: 8px solid;
   box-shadow: none;
-  padding-top: 70px;
+  padding: 27px 40px 0px;
   border-radius: 2px;
+  width: 100%;
 }
 #submission button {
-  margin: auto;
-  font-size: 20px;
-  padding: 20px 24px;
+  font-size: 18px;
+  line-height: 3.4;
   border-radius: 1px;
-  margin-top: 52px;
+  width: 182px;
+  margin: auto;
+  margin-top: 70px;
 }
 #submission button:hover {
   opacity: 1;
@@ -36,8 +39,14 @@ strong {
   opacity: 1;
   outline: none;
 }
+#submission input[type=text] {
+  margin: 60px 0px;
+}
 #submission input[type=submit] {
-  margin-top: 37px;
+  font-size: 16px;
+  padding: 17px 0px;
+  margin: auto;
+  margin-bottom: 50px;
 }
 #submission input[type="submit"]:disabled {
   transform: scale(1);
@@ -46,7 +55,7 @@ strong {
 }
 #time {
   margin: 0;
-  font-size: 68px;
+  font-size: 56px;
   line-height: 1.4;
   color: rgb(255, 255,255);
   letter-spacing: 9px;
@@ -56,13 +65,13 @@ strong {
 }
 
 p[name=question] {
-  font-size: 30px;
+  font-size: 23px;
   color: rgb(241, 63,72);
   font-weight: 700;
-  line-height: 1.7;
-  letter-spacing: 12px;
+  line-height: 2.3;
+  letter-spacing: 6px;
   background-color: rgb(255, 235, 59);
-  margin-top: 25px;
+  margin-bottom: 52px;
   border-radius: 1px;
 }
 .old-attempts {
@@ -71,9 +80,12 @@ p[name=question] {
   background-color: rgb(151, 35, 31);
   box-shadow: inset 5px 5px 38px rgba(0, 0, 0, 0.1), inset -5px -5px 38px rgba(0, 0, 0, 0.1);
   letter-spacing: 1px;
-
-  display: flex;
+  width: 520px;
+  height: 100%;
   flex-wrap: wrap;
+  flex-grow: 1;
+  margin-left: 50px;
+    margin-right: 25px;
   justify-content: left;
 }
 .old-attempts div {
@@ -82,7 +94,8 @@ p[name=question] {
   border-radius: 4px;
   margin: 22px;
   text-align: center;
-  /* width: 200px; */
+  width: 200px;
+  max-height: 255px;
   padding: 15px 30px;
   position: relative;
   border-top-left-radius: 52px 3px;

@@ -5,6 +5,9 @@ let currentTime;
 class Event {
 
   static setup() {
+    if(window.innerHeight > window.innerWidth){
+    console.log("Please use Landscape!");
+}
     document.getElementById('login').addEventListener('submit', Event.login);
     document.getElementsByClassName('timer')[0].addEventListener('click', Event.selectTime);
     document.getElementById('container').addEventListener('click', Event.crud);
