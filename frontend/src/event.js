@@ -16,7 +16,7 @@ class Event {
     event.preventDefault();
     document.getElementsByClassName('timer')[0].style.display = 'block';
     document.getElementById('username').style.display = 'block';
-    document.getElementById('title').style.paddingTop = 65;
+    document.getElementById('title').style.marginTop = 65;
     event.target.parentElement.style.display = 'none';
     const firstname = event.target.firstname.value;
     const lastname = event.target.lastname.value;
@@ -67,7 +67,6 @@ class Event {
         document.getElementsByName('play-again')[0].style.display = 'none';
         document.getElementsByName('question')[0].innerText = attempt.question;
         Word.redo(attempt.word);
-        console.log('attempt word', attempt.word)
         Timer.countdown(attempt.time, Event.whenZero);
     }
   }
@@ -75,7 +74,6 @@ class Event {
   static submit() {
     event.preventDefault();
     const word = Word.currentWord();
-    console.log('currentword', word)
     const guess = document.getElementById('guess');
     count += 1;
     if (guess.value === word.word) {

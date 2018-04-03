@@ -1,6 +1,6 @@
 
 strong {
-  font-size: 23px;
+  font-size: 20px;
   color: rgb(144, 35, 0);
 }
 #container {
@@ -12,38 +12,43 @@ strong {
 }
 #submission {
   text-align: center;
-  margin-left: 150px;
-  margin-right: 150px;
+  margin-left: 90px;
+  margin-right: 90px;
   z-index: 1;
 }
 #submission form {
-  height: 330px;
   border: 12px solid;
   box-shadow: none;
-  padding-bottom: 0;
+  padding-top: 70px;
   border-radius: 2px;
 }
 #submission button {
   margin: auto;
-  font-size: 25px;
-  line-height: 3;
-  padding-left: 30px;
-  padding-right: 30px;
-  border-radius: 4px;
-  margin-top: 66px;
+  font-size: 20px;
+  padding: 20px 24px;
+  border-radius: 1px;
+  margin-top: 52px;
 }
 #submission button:hover {
   opacity: 1;
-  transform: scale(1.3);
+  transform: scale(1.2);
 }
 #submission button:focus {
   opacity: 1;
   outline: none;
 }
+#submission input[type=submit] {
+  margin-top: 37px;
+}
+#submission input[type="submit"]:disabled {
+  transform: scale(1);
+  opacity: .8;
+  cursor: not-allowed;
+}
 #time {
   margin: 0;
-  margin-top: 15px;
-  font-size: 76px;
+  font-size: 68px;
+  line-height: 1.4;
   color: rgb(255, 255,255);
   letter-spacing: 9px;
   background-color: rgb(151, 35, 31);
@@ -52,20 +57,17 @@ strong {
 }
 
 p[name=question] {
-  font-size: 38px;
+  font-size: 30px;
   color: rgb(241, 63,72);
   font-weight: 700;
-  line-height: 1.4;
+  line-height: 1.7;
   letter-spacing: 12px;
   background-color: rgb(255, 235, 59);
-  margin-top: 15px;
-  border-radius: 2px;
+  margin-top: 25px;
+  border-radius: 1px;
 }
 
-
 .wrapper {
-  width: 777px;
-  height: 681px;
   overflow-y: scroll;
   padding: 15px;
   background-color: rgb(151, 35, 31);
@@ -83,25 +85,34 @@ p[name=question] {
   border-radius: 4px;
   margin: 22px;
   text-align: center;
-  width: 250px;
+  width: 200px;
   padding: 15px 30px;
   position: relative;
   border-top-left-radius: 52px 3px;
   border-bottom-right-radius: 60px 9px;
   box-shadow: 4px 4px 14px 0px rgba(0, 0, 0, 0.40);
 }
+.old-attempts div dl {
+  font-size: 14px;
+}
 .old-attempts div dl:first-child {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
 }
 
-.old-attempts div button[name=delete] {
+.old-attempts button[name=delete] {
   top: 19px;
   background-color: transparent;
   color: rgb(151, 35, 31);
   position: absolute;
   left: 6px;
   line-height: 0;
-  font-size: 30px;
+  font-size: 23px;
   background-color: inherit;
+}
+.old-attempts button[name=try-again] {
+  padding: 9px 10px;
+  border-radius: 1px;
+  font-weight: 200;
+  font-size: 11px;
 }
