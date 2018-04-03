@@ -6,7 +6,6 @@ strong {
 #container {
   justify-content: space-around;
   margin-bottom: 23px;
-  margin-left: 25px;
   margin-right: 25px;
   margin-top: 52px;
 }
@@ -66,15 +65,13 @@ p[name=question] {
   margin-top: 25px;
   border-radius: 1px;
 }
-
-.wrapper {
+.old-attempts {
   overflow-y: scroll;
   padding: 15px;
   background-color: rgb(151, 35, 31);
   box-shadow: inset 5px 5px 38px rgba(0, 0, 0, 0.1), inset -5px -5px 38px rgba(0, 0, 0, 0.1);
   letter-spacing: 1px;
-}
-.old-attempts {
+
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
