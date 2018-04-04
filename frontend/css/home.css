@@ -1,15 +1,13 @@
 
 #username {
-  margin-top: 21vh;
+  margin-top: 15vh;
   text-align: center;
   letter-spacing: 4px;
 }
-
 #username p {
   margin: auto;
-  font-size: 30px;
+  font-size: 27px;
   color: rgb(255, 255, 255);
-  line-height: 2.6px;
   padding-left: 30px;
   padding-right: 30px;
 }
@@ -23,18 +21,29 @@
 }
 .timer {
   text-align: center;
+  padding: 0px 26px;
 }
 .timer p {
   margin-top: 80px;
+  margin-bottom: 63px;
 }
 .timer button {
   font-size: 14px;
   width: 187px;
   padding: 19px 10px;
-  margin-top: 63px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin: 0px 20px 40px;
   border: 2.2px solid black;
   border-radius: 2px;
   box-shadow: 2px 10px rgb(0, 0, 0);
+  opacity: .8;
+}
+.timer button:hover {
+  opacity: 1;
+}
+.timer button:focus {
+  opacity: 1;
+  box-shadow: 2px 10px rgb(255, 235, 59);
+}
+.overfill {
+  overflow: auto;
 }

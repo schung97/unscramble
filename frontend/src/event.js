@@ -1,13 +1,8 @@
 let count = 0;
 let currentTime;
 
-
 class Event {
-
   static setup() {
-    if(window.innerHeight > window.innerWidth){
-    console.log("Please use Landscape!");
-}
     document.getElementById('login').addEventListener('submit', Event.login);
     document.getElementsByClassName('timer')[0].addEventListener('click', Event.selectTime);
     document.getElementById('container').addEventListener('click', Event.crud);
@@ -19,7 +14,6 @@ class Event {
     event.preventDefault();
     document.getElementsByClassName('timer')[0].style.display = 'block';
     document.getElementById('username').style.display = 'block';
-    document.getElementById('title').style.marginTop = 45;
     event.target.parentElement.style.display = 'none';
     const firstname = event.target.firstname.value;
     const lastname = event.target.lastname.value;
