@@ -19,7 +19,7 @@ class Event {
     event.preventDefault();
     document.getElementsByClassName('timer')[0].style.display = 'block';
     document.getElementById('username').style.display = 'block';
-    document.getElementById('title').style.marginTop = 65;
+    document.getElementById('title').style.marginTop = 45;
     event.target.parentElement.style.display = 'none';
     const firstname = event.target.firstname.value;
     const lastname = event.target.lastname.value;
